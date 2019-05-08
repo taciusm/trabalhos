@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[81]:
-
-
 import math
 
 dists = {
@@ -142,16 +136,3 @@ def a_star(start, goal="Bucharest"):
             lista_fechada.append(no_pai)
             lista_aberta.remove(no_pai)
     print('Caminho com menor distância: %s ' %lista_fechada)
-
-
-# In[82]:
-
-
-a_star("Arad")
-
-
-# In[ ]:
-
-
-
-
