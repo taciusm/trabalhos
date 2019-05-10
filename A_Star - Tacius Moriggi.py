@@ -122,17 +122,14 @@ def a_star(start, goal="Bucharest"):
     custos_dest = dict(straight_line_dists_from_bucharest)
     custos = {no_pai:1000000}
     while no_pai != goal:
-        if no_pai == goal:
-            print(lista_fechada)
-        else:
-            nos = dict(dists[no_pai])
-            for x  in nos.keys():
-                if no_pai not in x:
-                    lista_aberta.append(x)
-                    f = custos_dest.get(x)+nos.get(x)
-                    custos[x] = f
-            min_ = min(custos.values())
-            no_pai = list(custos.keys())[list(custos.values()).index(min_)]
-            lista_fechada.append(no_pai)
-            lista_aberta.remove(no_pai)
+        nos = dict(dists[no_pai])
+        for x  in nos.keys():
+            if no_pai not in x:
+                lista_aberta.append(x)
+                f = custos_dest.get(x)+nos.get(x)
+                custos[x] = f
+        min_ = min(custos.values())
+        no_pai = list(custos.keys())[list(custos.values()).index(min_)]
+        lista_fechada.append(no_pai)
+        lista_aberta.remove(no_pai)
     print('Caminho com menor distância: %s ' %lista_fechada)
